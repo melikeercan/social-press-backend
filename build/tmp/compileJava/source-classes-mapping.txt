@@ -1,0 +1,2 @@
+com/melike/backend/socialpress/SocialpressApplication.java
+ com.melike.backend.socialpress.SocialpressApplication
