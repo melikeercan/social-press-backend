@@ -1,2 +1,6 @@
 com/melike/backend/socialpress/SocialpressApplication.java
  com.melike.backend.socialpress.SocialpressApplication
+com/melike/backend/socialpress/controller/HelloWorldController.java
+ com.melike.backend.socialpress.controller.HelloWorldController
+com/melike/backend/socialpress/response/RestCallResponse.java
+ com.melike.backend.socialpress.response.RestCallResponse
