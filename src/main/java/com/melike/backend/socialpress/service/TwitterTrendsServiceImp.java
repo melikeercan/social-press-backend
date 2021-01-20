@@ -1,11 +1,9 @@
 package com.melike.backend.socialpress.service;
 
-import com.melike.backend.socialpress.response.TwitterSearchQueryResult;
 import com.melike.backend.socialpress.response.TwitterTrendsQueryResult;
 import com.melike.backend.socialpress.utils.ConfigurationSingleton;
 import org.springframework.stereotype.Service;
 import twitter4j.*;
-import twitter4j.api.TrendsResources;
 import twitter4j.conf.Configuration;
 
 import java.util.Arrays;
