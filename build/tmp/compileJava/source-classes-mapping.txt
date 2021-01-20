@@ -6,11 +6,13 @@ com/melike/backend/socialpress/response/RestCallResponse.java
  com.melike.backend.socialpress.response.RestCallResponse
 com/melike/backend/socialpress/service/BaseServiceImp.java
  com.melike.backend.socialpress.service.BaseServiceImp
-com/melike/backend/socialpress/controller/SearchTwitterController.java
- com.melike.backend.socialpress.controller.SearchTwitterController
+com/melike/backend/socialpress/service/SearchTwitterServiceImp.java
+ com.melike.backend.socialpress.service.SearchTwitterServiceImp
 com/melike/backend/socialpress/utils/Constants.java
  com.melike.backend.socialpress.utils.Constants
 com/melike/backend/socialpress/service/SearchTwitterService.java
  com.melike.backend.socialpress.service.SearchTwitterService
-com/melike/backend/socialpress/service/SearchTwitterServiceImp.java
- com.melike.backend.socialpress.service.SearchTwitterServiceImp
+com/melike/backend/socialpress/response/TwitterResponse.java
+ com.melike.backend.socialpress.response.TwitterResponse
+com/melike/backend/socialpress/controller/SearchTwitterController.java
+ com.melike.backend.socialpress.controller.SearchTwitterController
