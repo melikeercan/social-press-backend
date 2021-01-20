@@ -1,6 +1,8 @@
 package com.melike.backend.socialpress.service;
+import com.melike.backend.socialpress.response.TwitterSearchQueryResult;
+
 import java.util.List;
 
 public interface SearchTwitterService {
-    List<Object> search(String text);
+    TwitterSearchQueryResult search(String text);
 }

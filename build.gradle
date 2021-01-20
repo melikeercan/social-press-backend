@@ -17,6 +17,11 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	compile group: 'org.twitter4j', name: 'twitter4j-stream', version: '4.0.7'
+	compile group: 'org.twitter4j', name: 'twitter4j-core', version: '4.0.7'
+
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
