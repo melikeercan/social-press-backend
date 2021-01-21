@@ -112,3 +112,4 @@ gradlew.bat
 build.gradle
 
 *.properties
+src/main/resources/client_secret.json
