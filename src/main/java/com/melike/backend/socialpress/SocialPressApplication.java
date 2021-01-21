@@ -4,8 +4,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SocialpressApplication {
+public class SocialPressApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(SocialpressApplication.class, args);
+		SpringApplication.run(SocialPressApplication.class, args);
 	}
 }

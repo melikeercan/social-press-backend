@@ -25,6 +25,8 @@ public class StartupApplicationListener implements ApplicationListener<ContextRe
 
     private static Configuration configuration;
 
+    protected final Logger logger = LoggerFactory.getLogger(this.getClass());
+
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
         ConfigurationBuilder configurationBuilder = new ConfigurationBuilder();
@@ -34,6 +36,7 @@ public class StartupApplicationListener implements ApplicationListener<ContextRe
                 .setOAuthAccessToken(accessKey)
                 .setOAuthAccessTokenSecret(accessSecret);
         this.setConfiguration(configurationBuilder.build());
+        logger.info("[onApplicationEvent][TwitterConfiguration]["+configuration.getMediaProvider()+"]");
     }
 
     public static Configuration getConfiguration() {
