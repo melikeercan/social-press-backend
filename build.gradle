@@ -20,6 +20,7 @@ dependencies {
 
 	compile group: 'org.twitter4j', name: 'twitter4j-stream', version: '4.0.7'
 	compile group: 'org.twitter4j', name: 'twitter4j-core', version: '4.0.7'
+	compile group: 'org.springframework', name: 'spring-context', version: '5.3.3'
 
 
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

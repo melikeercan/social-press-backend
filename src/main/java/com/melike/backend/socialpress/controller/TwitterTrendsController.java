@@ -19,7 +19,6 @@ public class TwitterTrendsController {
         this.twitterTrendsService = twitterTrendsService;
     }
 
-
     @GetMapping("/")
     @ResponseBody
     RestCallResponse twitterTrends() {

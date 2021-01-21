@@ -1,11 +1,10 @@
 package com.melike.backend.socialpress.service;
 
+import com.melike.backend.socialpress.configuration.StartupApplicationListener;
 import com.melike.backend.socialpress.response.TwitterSearchQueryResult;
-import com.melike.backend.socialpress.utils.ConfigurationSingleton;
 import com.melike.backend.socialpress.utils.ConverterUtils;
 import org.springframework.stereotype.Service;
 import twitter4j.*;
-import twitter4j.conf.Configuration;
 
 @Service
 public class SearchTwitterServiceImp extends BaseServiceImp implements SearchTwitterService {
@@ -14,8 +13,7 @@ public class SearchTwitterServiceImp extends BaseServiceImp implements SearchTwi
     public TwitterSearchQueryResult search(String text){
         System.out.println("searching: " + text);
         TwitterSearchQueryResult twitterSearchQueryResult = null;
-        Configuration config = ConfigurationSingleton.getInstance().getConfiguration();
-        Twitter twitter = new TwitterFactory(config).getInstance();
+        Twitter twitter = new TwitterFactory(StartupApplicationListener.getConfiguration()).getInstance();
         try {
             QueryResult result = twitter.search(new Query(text));
             System.out.println(result);
