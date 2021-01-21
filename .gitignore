@@ -109,5 +109,6 @@ build
 gradlew
 gradle
 gradlew.bat
+build.gradle
 
 *.properties
