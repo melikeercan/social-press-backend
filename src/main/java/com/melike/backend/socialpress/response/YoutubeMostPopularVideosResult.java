@@ -1,6 +1,8 @@
-package com.melike.backend.socialpress.dto;
+package com.melike.backend.socialpress.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.melike.backend.socialpress.dto.PageInfo;
+import com.melike.backend.socialpress.dto.YoutubeVideo;
 
 import java.util.List;
 
