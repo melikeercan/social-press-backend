@@ -3,11 +3,11 @@ package com.melike.backend.socialpress.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class YoutubeVideo {
-    public final String kind;
-    public final String etag;
-    public final String id;
-    public final Statistics statistics;
-    public final Snippet snippet;
+    private final String kind;
+    private final String etag;
+    private final String id;
+    private final Statistics statistics;
+    private final Snippet snippet;
 
     public YoutubeVideo(
             @JsonProperty("kind") String kind,
@@ -20,5 +20,25 @@ public class YoutubeVideo {
         this.id = id;
         this.statistics = statistics;
         this.snippet = snippet;
+    }
+
+    public String getKind() {
+        return kind;
+    }
+
+    public String getEtag() {
+        return etag;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public Statistics getStatistics() {
+        return statistics;
+    }
+
+    public Snippet getSnippet() {
+        return snippet;
     }
 }

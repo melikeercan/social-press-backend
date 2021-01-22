@@ -1,7 +1,8 @@
 package com.melike.backend.socialpress.controller;
 
-import com.melike.backend.socialpress.response.YoutubeMostPopularVideosResult;
+import com.melike.backend.socialpress.dto.YoutubeMostPopularVideosResult;
 import com.melike.backend.socialpress.response.RestCallResponse;
+import com.melike.backend.socialpress.response.YoutubeTrendsQueryResult;
 import com.melike.backend.socialpress.service.YoutubeTrendsServiceImp;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -21,8 +22,8 @@ public class YoutubeTrendsController {
 
     @GetMapping("/")
     @ResponseBody
-    RestCallResponse twitterTrends() {
-        YoutubeMostPopularVideosResult result = youtubeTrendsService.fetchTrends();
+    RestCallResponse youtubeTrends() {
+        YoutubeTrendsQueryResult result = youtubeTrendsService.fetchTrends();
         return new RestCallResponse(HttpStatus.OK, FETCH_TRENDS_SUCCESSFULLY, result);
     }
 

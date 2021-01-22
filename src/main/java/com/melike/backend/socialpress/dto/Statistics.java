@@ -3,10 +3,10 @@ package com.melike.backend.socialpress.dto;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Statistics {
-    public final Long viewCount;
-    public final Long likeCount;
-    public final Long dislikeCount;
-    public final Long favoriteCount;
+    private final Long viewCount;
+    private final Long likeCount;
+    private final Long dislikeCount;
+    private final Long favoriteCount;
 
     public Statistics(
             @JsonProperty("viewCount") Long viewCount,
@@ -18,5 +18,21 @@ public class Statistics {
         this.likeCount = likeCount;
         this.dislikeCount = dislikeCount;
         this.favoriteCount = favoriteCount;
+    }
+
+    public Long getViewCount() {
+        return viewCount;
+    }
+
+    public Long getLikeCount() {
+        return likeCount;
+    }
+
+    public Long getDislikeCount() {
+        return dislikeCount;
+    }
+
+    public Long getFavoriteCount() {
+        return favoriteCount;
     }
 }

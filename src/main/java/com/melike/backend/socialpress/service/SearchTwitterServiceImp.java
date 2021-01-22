@@ -11,14 +11,11 @@ public class SearchTwitterServiceImp extends BaseServiceImp implements SearchTwi
 
     @Override
     public TwitterSearchQueryResult search(String text){
-        System.out.println("searching: " + text);
         TwitterSearchQueryResult twitterSearchQueryResult = null;
         Twitter twitter = new TwitterFactory(StartupApplicationListener.getConfiguration()).getInstance();
         try {
             QueryResult result = twitter.search(new Query(text));
-            System.out.println(result);
-            ConverterUtils converterUtils = new ConverterUtils();
-            twitterSearchQueryResult = converterUtils.converter(result);
+            twitterSearchQueryResult = ConverterUtils.convertToTwitterResult(result);
         } catch (TwitterException te) {
             te.printStackTrace();
         }

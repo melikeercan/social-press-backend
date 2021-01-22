@@ -2,19 +2,15 @@ package com.melike.backend.socialpress.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
-import java.util.TimeZone;
 
 public class Snippet {
-    public final String channelId;
-    public final String title;
-    public final String description;
-    public final String channelTitle;
-    public final List<String> tags;
-    
+    private final String channelId;
+    private final String title;
+    private final String description;
+    private final String channelTitle;
+    private final List<String> tags;
+
     public Snippet(
             @JsonProperty("channelId") String channelId,
             @JsonProperty("title") String title,
@@ -27,5 +23,25 @@ public class Snippet {
         this.description = description;
         this.channelTitle = channelTitle;
         this.tags = tags;
+    }
+
+    public String getChannelId() {
+        return channelId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public String getChannelTitle() {
+        return channelTitle;
+    }
+
+    public List<String> getTags() {
+        return tags;
     }
 }

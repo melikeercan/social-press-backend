@@ -1,17 +1,15 @@
-package com.melike.backend.socialpress.response;
+package com.melike.backend.socialpress.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.melike.backend.socialpress.dto.PageInfo;
-import com.melike.backend.socialpress.dto.YoutubeVideo;
 
 import java.util.List;
 
 public class YoutubeMostPopularVideosResult {
-    public final String kind;
-    public final String etag;
-    public final String nextPageToken;
-    public final PageInfo pageInfo;
-    public final List<YoutubeVideo> items;
+    private final String kind;
+    private final String etag;
+    private final String nextPageToken;
+    private final PageInfo pageInfo;
+    private final List<YoutubeVideo> items;
 
     public YoutubeMostPopularVideosResult(
             @JsonProperty("kind") String kind,
@@ -25,5 +23,25 @@ public class YoutubeMostPopularVideosResult {
         this.nextPageToken = nextPageToken;
         this.pageInfo = pageInfo;
         this.items = items;
+    }
+
+    public String getKind() {
+        return kind;
+    }
+
+    public String getEtag() {
+        return etag;
+    }
+
+    public String getNextPageToken() {
+        return nextPageToken;
+    }
+
+    public PageInfo getPageInfo() {
+        return pageInfo;
+    }
+
+    public List<YoutubeVideo> getItems() {
+        return items;
     }
 }
