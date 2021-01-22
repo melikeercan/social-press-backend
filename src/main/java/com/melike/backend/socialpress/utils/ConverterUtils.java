@@ -3,9 +3,11 @@ package com.melike.backend.socialpress.utils;
 import com.melike.backend.socialpress.dto.YoutubeMostPopularVideosResult;
 import com.melike.backend.socialpress.dto.YoutubeTrend;
 import com.melike.backend.socialpress.response.TwitterSearchQueryResult;
+import com.melike.backend.socialpress.response.YoutubeRelatedVideosQueryResult;
 import com.melike.backend.socialpress.response.YoutubeTrendsQueryResult;
 import twitter4j.QueryResult;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -30,5 +32,10 @@ public class ConverterUtils {
                 .collect(Collectors.toList());
         System.out.println(trendList);
         return new YoutubeTrendsQueryResult(trendList);
+    }
+
+    public static YoutubeRelatedVideosQueryResult convertToYoutubeRelatedVideosResult() {
+        System.out.println("converting");
+        return new YoutubeRelatedVideosQueryResult(new ArrayList<>());
     }
 }

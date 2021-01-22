@@ -19,18 +19,9 @@ public class SearchTwitterController {
         this.searchTwitterService = searchTwitterService;
     }
 
-
-    @GetMapping("/")
-    @ResponseBody
-    RestCallResponse searchTwitter() {
-        return new RestCallResponse(HttpStatus.OK, "works",
-                "hello");
-    }
-
     @GetMapping("/text={text}")
     RestCallResponse searchTwitter(@PathVariable("text") String text) {
         TwitterSearchQueryResult serviceResult = searchTwitterService.search(text);
-        System.out.println(serviceResult);
         return new RestCallResponse(HttpStatus.OK, SEARCH_SUCCESSFULLY, serviceResult);
     }
 }
