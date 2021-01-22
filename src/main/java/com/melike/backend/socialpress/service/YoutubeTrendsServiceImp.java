@@ -9,7 +9,12 @@ import java.security.GeneralSecurityException;
 import java.util.Arrays;
 import java.util.Collection;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.api.services.youtube.model.PageInfo;
+import com.google.api.services.youtube.model.VideoListResponse;
+import com.melike.backend.socialpress.dto.YoutubeMostPopularVideosResult;
+import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -31,16 +36,16 @@ public class YoutubeTrendsServiceImp implements YoutubeTrendsService{
 
     public void callMe() throws IOException, GeneralSecurityException {
         System.out.println("callMe");
-        ObjectMapper mapper = new ObjectMapper();
+        ObjectMapper mapper = new ObjectMapper()
+                .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
         try (CloseableHttpClient client = HttpClients.createDefault()) {
+            String url = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2Cstatistics&chart=mostPopular&key=";
+            HttpGet request = new HttpGet(url+apiKey);
 
-            HttpGet request = new HttpGet("https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=the%20weeknd&key="+apiKey);
-
-            APOD response = client.execute(request, httpResponse ->
-                    mapper.readValue(httpResponse.getEntity().getContent(), APOD.class));
-
-            System.out.println(response.items);
+            YoutubeMostPopularVideosResult response = client.execute(request, httpResponse ->
+                    mapper.readValue(httpResponse.getEntity().getContent(), YoutubeMostPopularVideosResult.class));
+            System.out.println(response.items.size());
         }
     }
 }
