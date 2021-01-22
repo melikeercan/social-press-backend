@@ -19,7 +19,7 @@ public class SearchRelatedVideosController {
     }
 
     @GetMapping("/videoId={videoId}")
-    RestCallResponse searchTwitter(@PathVariable("videoId") String videoId) {
+    RestCallResponse searchYoutubeRelated(@PathVariable("videoId") String videoId) {
         YoutubeRelatedVideosQueryResult serviceResult = youtubeRelatedVideosService.searchRelated(videoId);
         return new RestCallResponse(HttpStatus.OK, FETCHED_RELATED_VIDEOS_SUCCESSFULLY, serviceResult);
     }
