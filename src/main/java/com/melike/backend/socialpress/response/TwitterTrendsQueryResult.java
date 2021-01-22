@@ -5,7 +5,6 @@ import twitter4j.Trend;
 import java.util.List;
 
 public class TwitterTrendsQueryResult {
-
     private List<Trend> trendList;
 
     public TwitterTrendsQueryResult(List<Trend> trendList) {

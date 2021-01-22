@@ -1,10 +1,14 @@
 package com.melike.backend.socialpress.dto;
 
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class YoutubeRelatedVideoResult {
+
+@JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
+public class YoutubeRelatedVideoResult implements Serializable {
 
     private final String kind;
     private final String etag;

@@ -11,8 +11,9 @@ import org.apache.http.impl.client.HttpClients;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.stream.Collectors;
 
 import static com.melike.backend.socialpress.utils.Constants.YOUTUBE_RELATED_VIDEOS_URL;
 
@@ -29,12 +30,9 @@ public class YoutubeRelatedVideosServiceImp extends BaseServiceImp implements Yo
         ObjectMapper mapper = new ObjectMapper()
                 .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
         try (CloseableHttpClient client = HttpClients.createDefault()) {
-            HttpGet request = new HttpGet(YOUTUBE_RELATED_VIDEOS_URL + apiKey);
-            client.execute(request, httpResponse -> {
-                InputStream content = httpResponse.getEntity().getContent();
-                System.out.println(httpResponse.getEntity().getContent());
-                return content;
-            });
+            String url = YOUTUBE_RELATED_VIDEOS_URL + id + "&type=video&key=" + apiKey;
+            System.out.println(url);
+            HttpGet request = new HttpGet(url);
             YoutubeRelatedVideoResult response = client.execute(request, httpResponse ->
                     mapper.readValue(httpResponse.getEntity().getContent(),
                             YoutubeRelatedVideoResult.class));

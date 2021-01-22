@@ -2,9 +2,11 @@ package com.melike.backend.socialpress.response;
 
 import com.melike.backend.socialpress.dto.YoutubeResult;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class YoutubeTrendsQueryResult {
+public class YoutubeTrendsQueryResult implements Serializable {
+
     private List<YoutubeResult> trendList;
 
     public YoutubeTrendsQueryResult(List<YoutubeResult> trendList) {
