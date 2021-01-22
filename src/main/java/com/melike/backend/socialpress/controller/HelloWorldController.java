@@ -23,13 +23,6 @@ public class HelloWorldController {
     @GetMapping("/")
     @ResponseBody
     RestCallResponse hello() {
-        try {
-            youtubeTrendsServiceImp.callMe();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (GeneralSecurityException e) {
-            e.printStackTrace();
-        }
         return new RestCallResponse(HttpStatus.OK, "works",
                 "hello");
     }

@@ -13,6 +13,8 @@ import org.apache.http.impl.client.HttpClients;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import static com.melike.backend.socialpress.utils.Constants.YOUTUBE_MOST_POPULAR_URL;
+
 
 @Service
 public class YoutubeTrendsServiceImp implements YoutubeTrendsService{
@@ -21,23 +23,19 @@ public class YoutubeTrendsServiceImp implements YoutubeTrendsService{
     private String apiKey;
 
     @Override
-    public Object fetchTrends() {
-        return null;
-    }
-
-
-    public void callMe() throws IOException, GeneralSecurityException {
-        System.out.println("callMe");
+    public YoutubeMostPopularVideosResult fetchTrends() {
+        YoutubeMostPopularVideosResult response = null;
         ObjectMapper mapper = new ObjectMapper()
                 .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
 
         try (CloseableHttpClient client = HttpClients.createDefault()) {
-            String url = "https://youtube.googleapis.com/youtube/v3/videos?part=snippet%2Cstatistics&chart=mostPopular&key=";
-            HttpGet request = new HttpGet(url+apiKey);
-
-            YoutubeMostPopularVideosResult response = client.execute(request, httpResponse ->
-                    mapper.readValue(httpResponse.getEntity().getContent(), YoutubeMostPopularVideosResult.class));
-            System.out.println(response.items.size());
+            HttpGet request = new HttpGet(YOUTUBE_MOST_POPULAR_URL + apiKey);
+            response = client.execute(request, httpResponse ->
+                    mapper.readValue(httpResponse.getEntity().getContent(),
+                            YoutubeMostPopularVideosResult.class));
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+        return response;
     }
 }
