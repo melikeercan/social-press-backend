@@ -1,21 +1,21 @@
 package com.melike.backend.socialpress.response;
 
-import com.melike.backend.socialpress.dto.YoutubeTrend;
+import com.melike.backend.socialpress.dto.YoutubeResult;
 
 import java.util.List;
 
 public class YoutubeTrendsQueryResult {
-    private List<YoutubeTrend> trendList;
+    private List<YoutubeResult> trendList;
 
-    public YoutubeTrendsQueryResult(List<YoutubeTrend> trendList) {
+    public YoutubeTrendsQueryResult(List<YoutubeResult> trendList) {
         this.trendList = trendList;
     }
 
-    public List<YoutubeTrend> getTrendList() {
+    public List<YoutubeResult> getTrendList() {
         return trendList;
     }
 
-    public void setTrendList(List<YoutubeTrend> trendList) {
+    public void setTrendList(List<YoutubeResult> trendList) {
         this.trendList = trendList;
     }
 

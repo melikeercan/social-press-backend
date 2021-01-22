@@ -2,7 +2,7 @@ package com.melike.backend.socialpress.service;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.melike.backend.socialpress.dto.YoutubeMostPopularVideosResult;
+import com.melike.backend.socialpress.dto.YoutubeRelatedVideoResult;
 import com.melike.backend.socialpress.response.YoutubeRelatedVideosQueryResult;
 import com.melike.backend.socialpress.utils.ConverterUtils;
 import org.apache.http.client.methods.HttpGet;
@@ -35,10 +35,10 @@ public class YoutubeRelatedVideosServiceImp extends BaseServiceImp implements Yo
                 System.out.println(httpResponse.getEntity().getContent());
                 return content;
             });
-            YoutubeMostPopularVideosResult response = client.execute(request, httpResponse ->
+            YoutubeRelatedVideoResult response = client.execute(request, httpResponse ->
                     mapper.readValue(httpResponse.getEntity().getContent(),
-                            YoutubeMostPopularVideosResult.class));
-            result = ConverterUtils.convertToYoutubeRelatedVideosResult();
+                            YoutubeRelatedVideoResult.class));
+            result = ConverterUtils.convertToYoutubeRelatedVideosResult(response);
         } catch (IOException e) {
             e.printStackTrace();
         }
