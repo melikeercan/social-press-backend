@@ -10,7 +10,7 @@ import static com.melike.backend.socialpress.utils.Constants.FETCH_TRENDS_SUCCES
 
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
-@RequestMapping("/api/v0/trends/twitter")
+@RequestMapping("/api/v0/trends/youtube")
 public class YoutubeTrendsController {
 
     private final YoutubeTrendsServiceImp youtubeTrendsService;
