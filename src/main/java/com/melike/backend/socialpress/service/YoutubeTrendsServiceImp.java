@@ -2,19 +2,11 @@ package com.melike.backend.socialpress.service;
 
 
 import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.nio.file.Paths;
 import java.security.GeneralSecurityException;
-import java.util.Arrays;
-import java.util.Collection;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.api.services.youtube.model.PageInfo;
-import com.google.api.services.youtube.model.VideoListResponse;
 import com.melike.backend.socialpress.dto.YoutubeMostPopularVideosResult;
-import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;

@@ -14,8 +14,7 @@ public class Snippet {
     public final String description;
     public final String channelTitle;
     public final List<String> tags;
-
-
+    
     public Snippet(
             @JsonProperty("channelId") String channelId,
             @JsonProperty("title") String title,

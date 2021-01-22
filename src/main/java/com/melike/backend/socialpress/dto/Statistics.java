@@ -8,7 +8,6 @@ public class Statistics {
     public final Long dislikeCount;
     public final Long favoriteCount;
 
-
     public Statistics(
             @JsonProperty("viewCount") Long viewCount,
             @JsonProperty("likeCount") Long likeCount,
