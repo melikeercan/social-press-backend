@@ -16,7 +16,6 @@ import org.springframework.stereotype.Service;
 
 import static com.melike.backend.socialpress.utils.Constants.YOUTUBE_MOST_POPULAR_URL;
 
-
 @Service
 public class YoutubeTrendsServiceImp implements YoutubeTrendsService{
 

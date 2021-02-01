@@ -1,6 +1,5 @@
 package com.melike.backend.socialpress.controller;
 
-import com.melike.backend.socialpress.dto.YoutubeMostPopularVideosResult;
 import com.melike.backend.socialpress.response.RestCallResponse;
 import com.melike.backend.socialpress.response.YoutubeTrendsQueryResult;
 import com.melike.backend.socialpress.service.YoutubeTrendsServiceImp;
